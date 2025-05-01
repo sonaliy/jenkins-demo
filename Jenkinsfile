@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    tools {
+        nodejs "mynodejs"
+    }
     stages {
         stage('Hello') {
             steps {
@@ -14,5 +16,11 @@ pipeline {
                 sh 'cat README.md'
             }
         }
+        stage('node build') {
+            steps {
+                sh 'npm install'
+            }
+        }
+
     }
 }
