@@ -7,9 +7,11 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        stage('Hello2') {
+       stage('Dev') {
             steps {
-                echo 'test'
+                git 'https://github.com/sonaliy/jenkins-demo.git'
+                echo 'content of my file is'
+                sh 'cat README.md'
             }
         }
     }
